@@ -39,7 +39,7 @@ docs_language: rockyjs
       {% if module['kind'] == "member" or module['kind'] == "namespace" %}
       <div class="docs__module">
         <h4><a href="{{ module.url }}">{{ module.name }}</a></h4>
-        <p>{{ module.summary | markdownify }}</p>
+        <p>{{ module.summary | default: "" | markdownify }}</p>
       </div>
       {% endif %}
       {% endfor %}
